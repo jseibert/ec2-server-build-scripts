@@ -35,7 +35,7 @@ end script
 start on startup
 stop on shutdown
 
-exec start-stop-daemon --start --quiet --chuid mongodb --exec  /usr/bin/mongod -- --shardsvr --dbpath /mnt/data/db/mongodb --logpath /mnt/data/db/mongodb.log --logappend
+exec start-stop-daemon --start --quiet --chuid mongodb --exec  /usr/bin/mongod -- --shardsvr --dbpath /mnt/data/db/mongodb --logpath /mnt/data/db/mongodb.log --logappend --fastsync --replSet crashset
 EOF
 
 # Install monit and monitor our MongoDB process
